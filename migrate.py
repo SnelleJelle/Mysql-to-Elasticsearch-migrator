@@ -23,9 +23,9 @@ es_port = 9200
 es_index = mysql_database
 
 #clear es
-requests.delete("http://" + es_host + ":" + es_port + "/_all")
+requests.delete("http://" + es_host + ":" + str(es_port) + "/_all")
 
-es = Elasticsearch(["http://" + es_host + ":" + es_port])
+es = Elasticsearch(["http://" + es_host + ":" + str(es_port)])
 
 connection = MySQLdb.connect(
     host=mysql_host,
